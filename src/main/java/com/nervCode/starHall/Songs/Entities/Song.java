@@ -22,11 +22,6 @@ public class Song {
     private Set<Genre> genres = new HashSet<>();
     @Column(name = "src")
     private String src;
-    @Column(name = "title")
-    private String title;
-    @Column(name = "author")
-
-    private String author;
     @Column(name = "lyrics")
 
     private String lyrics;
@@ -34,17 +29,20 @@ public class Song {
 
     private String interpretation;
 
+    @Column(name = "favoritecounter")
+    private int favoriteCounter = 0;
+
     public Song(){}
 
-    public Song(int id,  Set<Genre> genres, String src, String title, String author, String lyrics, String interpretation) {
-        this.id = id;
+    public Song(Set<Genre> genres, String src, String lyrics, String interpretation, int favoriteCounter) {
         this.genres = genres;
         this.src = src;
-        this.title = title;
-        this.author = author;
         this.lyrics = lyrics;
         this.interpretation = interpretation;
+        this.favoriteCounter = favoriteCounter;
     }
+
+
 
     public Set<Genre> getGenres() {
         return genres;
@@ -56,8 +54,6 @@ public class Song {
                 "id=" + id +
                 ", genres=" + genres +
                 ", src='" + src + '\'' +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
                 ", lyrics='" + lyrics + '\'' +
                 ", interpretation='" + interpretation + '\'' +
                 '}';
@@ -74,21 +70,6 @@ public class Song {
         this.genres = genres;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 
     public String getLyrics() {
         return lyrics;
@@ -112,5 +93,21 @@ public class Song {
 
     public void setSrc(String src) {
         this.src = src;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getFavoriteCounter() {
+        return favoriteCounter;
+    }
+
+    public void setFavoriteCounter(int favoriteCounter) {
+        this.favoriteCounter = favoriteCounter;
     }
 }

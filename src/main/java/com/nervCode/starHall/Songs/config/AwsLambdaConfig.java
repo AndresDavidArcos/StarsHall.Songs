@@ -42,6 +42,24 @@ public class AwsLambdaConfig {
     public void setSongDao(SongDao repo){
         songDao = repo;
     }
+    /*
+    PUT: http://localhost:8080/createSongWithGenres
+    EJEMPLO DE COMO PASAR EL JSON PARA CREAR UNA SONG:
+{
+    "src": "https://example2.com/songs/song123.mp3",
+    "lyrics": "aaksdjkasjhdaskjdhaskjhd...",
+    "interpretation": "que significa la cancion"
+    ,
+  "genres": [
+    {
+      "genre": "Rock"
+    },
+    {
+      "genre": "Classic"
+    }
+  ]
+}
+     */
 
     @Bean
     public Consumer<Song> createSongWithGenres(){
