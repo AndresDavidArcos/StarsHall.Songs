@@ -43,7 +43,7 @@ public class AwsLambdaConfig {
         songDao = repo;
     }
     /*
-    PUT: http://localhost:8080/createSongWithGenres
+    POST: http://localhost:8080/createSongWithGenres
     EJEMPLO DE COMO PASAR EL JSON PARA CREAR UNA SONG:
 {
     "src": "https://example2.com/songs/song123.mp3",
